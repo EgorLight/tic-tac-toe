@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Крестики-Нолики</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="visually-hidden">Крестики-Нолики</h1>
+        <img class="header__logo" width="144" height="45" src="img/logo.svg" alt="Логотип">
+    </header>
+    <main class="game">
+        <!-- Главное меню -->
+        <section class="game__section--opened menu" id="menu">
+            <h2 class="visually-hidden">Главное меню</h2>
+            <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link" id="playBtn">Начать игру</a></li>
+                <li class="menu__item"><a class="menu__link" id="rulesBtn">Правила</a></li>
+                <li class="menu__item"><a class="menu__link" id="settingsBtn">Настройки</a></li>
+                <li class="menu__item"><a class="menu__link" id="aboutBtn">Об игре</a></li>
+            </ul>
+        </section>
+
+        <!-- Выбор режима игры -->
+        <section class="game__section mode" id="mode">
+            <h2 class="visually-hidden">Режимы игры</h2>
+            <ul class="mode__list">
+                <li class="mode__item"><a class="mode__link">Одиночная игра</a></li>
+                <li class="mode__item"><a class="mode__link">Игра с другом</a></li>
+                <li class="mode__item"><a class="mode__link">Игра онлайн</a></li>
+            </ul>
+            <a class="back-button mode__back">Назад</a>
+        </section>
+
+        <!-- Игровое поле -->
+        <section class="game__section field" id="field">
+            <h2 class="visually-hidden">Игровое поле</h2>
+            <span class="field__text">Вы играете за <span class="field__team">крестики</span></span>
+            <span class="field__move">Ваш ход</span>
+            <div class="field__grid">
+                
+            </div>
+            <a class="field__give-up">Сдаться</a>
+        </section>
+
+        <!-- Раздел с информацией -->
+        <section class="game__section about" id="about">
+            <h2 class="visually-hidden">Об игре</h2>
+            <ul class="about__list">
+                <li class="about__item">
+                    <h3 class="about__item-title">Автор:</h3>
+                    <span class="about__item-description">Егор Лайт</span>
+                </li>
+                <li class="about__item">
+                    <h3 class="about__item-title">Поддержка:</h3>
+                    <span class="about__item-description"><a href="https://t.me/egorlight04">https://t.me/egorlight04</a></span>
+                </li>
+                <li class="about__item">
+                    <h3 class="about__item-title">Версия игры:</h3>
+                    <span class="about__item-description"><a href="https://github.com/EgorLight/Cross-Zero-game">v. 1.0</a></span>
+                </li>
+            </ul>
+            <a class="back-button about__back">Назад</a>
+        </section>
+
+        <!-- Раздел с настройками -->
+        <section class="game__section settings" id="settings">
+            <h2 class="visually-hidden">Настройки</h2>
+            <form class="settings__form">
+                <label class="settings__item">
+                    <h3 class="settings__property">Звук:</h3>
+                    <input class="settings__input visually-hidden" type="checkbox">
+                    <span class="settings__value"></span>
+                </label>
+                <label class="settings__item">
+                    <h3 class="settings__property">Режим разработчика:</h3>
+                    <input class="settings__input visually-hidden" type="checkbox">
+                    <span class="settings__value"></span>
+                </label>
+                <!-- <label class="settings__item">
+                    <h3 class="settings__property">Язык:</h3>
+                    <select>
+                        <option>Русский</option>
+                        <option>English</option>
+                    </select>
+                </label> -->
+            </form>
+            <a class="back-button settings__back">Назад</a>
+        </section>
+
+        <!-- Раздел с правилами игры -->
+        <section class="game__section rules" id="rules">
+            <h2 class="visually-hidden">Правила игры</h2>
+            <p class="rules__text">
+                Игроки по очереди ставят на свободные клетки поля 3х3 знаки. Первый, выстроивший в ряд 3 своих фигуры по вертикали, горизонтали или диагонали, выигрывает.
+            </p>
+            <a class="back-button rules__back">Назад</a>
+        </section>
+    </main>
+    <script src="game.js"></script>
+</body>
+</html>
