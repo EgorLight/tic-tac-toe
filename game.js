@@ -1,61 +1,32 @@
-
-const buttons = {
-    init: function() {
-        for (key in this) {
-            if (typeof this[key] === "function") continue;
-            this[key].getElement().addEventListener("click", openSection);
+let Buttons = function(buttonsClass) {
+    let buttonsList = document.getElementsByClassName(buttonsClass);
+    for (let i in buttonsList) {
+        if (i === "length") break;
+        let id = buttonsList[i].id;
+        this[id] = {
+            element: buttonsList[i],
+            from: document.getElementById(id.split("-")[0]),
+            to: document.getElementById(id.split("-")[1]),   
         }
-    },
-    playBtn: {
-        getElement: getElement,
-        elementId: "playBtn",
-        targetSection: "mode",
-        currentSection: "menu",
-        open: open,
-    },
-    rulesBtn: {
-        getElement: getElement,
-        elementId: "rulesBtn",
-        targetSection: "rules",
-        currentSection: "menu",
-        open: open,
-    },
-    settingsBtn: {
-        getElement: getElement,
-        elementId: "settingsBtn",
-        targetSection: "settings",
-        currentSection: "menu",
-        open: open,
-    },
-    aboutBtn: {
-        getElement: getElement,
-        elementId: "aboutBtn",
-        targetSection: "about",
-        currentSection: "menu",
-        open: open,
-    },
-    // backBtn: {
-    //     targetSection: "menu",
-    //     currentSection: ["rules", "mode", "settings", "about"], 
-    //     open: open,
-    // },
+    }
 }
 
-function getElement() {
-    id = this.elementId
-    return document.getElementById(id);
+function addListeners(buttonsObj) {
+    for (let id in buttonsObj) {
+        buttonsObj[id].element.addEventListener("click", function(event) {
+            buttonsObj[event.target.id].to.classList.add("game__section--opened");
+            buttonsObj[event.target.id].to.classList.remove("game__section");
+            buttonsObj[event.target.id].from.classList.add("game__section");
+            buttonsObj[event.target.id].from.classList.remove("game__section--opened");
+        });
+    }
 }
 
-function open() {
-    let targetSection = document.getElementById(this.targetSection);
-    let currentSection = document.getElementById(this.currentSection);
-    targetSection.classList.add('game__section--opened');
-    currentSection.classList.remove('game__section--opened');
-    currentSection.classList.add('game__section');
+function open(event) {
+    console.log(event.target);    
 }
 
-function openSection(event) {
-    buttons[event.target.id].open();
-}
-
-buttons.init();
+let buttons = new Buttons("nav-list__link");
+let backButtons = new Buttons("back-button");
+addListeners(buttons);
+addListeners(backButtons);

@@ -17,27 +17,27 @@
         <!-- Главное меню -->
         <section class="game__section--opened menu" id="menu">
             <h2 class="visually-hidden">Главное меню</h2>
-            <ul class="menu__list">
-                <li class="menu__item"><a class="menu__link" id="playBtn">Начать игру</a></li>
-                <li class="menu__item"><a class="menu__link" id="rulesBtn">Правила</a></li>
-                <li class="menu__item"><a class="menu__link" id="settingsBtn">Настройки</a></li>
-                <li class="menu__item"><a class="menu__link" id="aboutBtn">Об игре</a></li>
+            <ul class="nav-list">
+                <li class="nav-list__item"><a class="nav-list__link" id="menu-mode">Начать игру</a></li>
+                <li class="nav-list__item"><a class="nav-list__link" id="menu-settings">Настройки</a></li>
+                <li class="nav-list__item"><a class="nav-list__link" id="menu-rules">Правила</a></li>
+                <li class="nav-list__item"><a class="nav-list__link" id="menu-about">Об игре</a></li>
             </ul>
         </section>
 
         <!-- Выбор режима игры -->
         <section class="game__section mode" id="mode">
             <h2 class="visually-hidden">Режимы игры</h2>
-            <ul class="mode__list">
-                <li class="mode__item"><a class="mode__link">Одиночная игра</a></li>
-                <li class="mode__item"><a class="mode__link">Игра с другом</a></li>
-                <li class="mode__item"><a class="mode__link">Игра онлайн</a></li>
+            <ul class="nav-list">
+                <li class="nav-list__item"><a class="nav-list__link" id="mode-single">Одиночная игра</a></li>
+                <li class="nav-list__item"><a class="nav-list__link" id="mode-together">Игра с другом</a></li>
+                <li class="nav-list__item"><a class="nav-list__link" id="mode-online">Игра онлайн</a></li>
             </ul>
-            <a class="back-button mode__back">Назад</a>
+            <a class="back-button" id="mode-menu">Назад</a>
         </section>
 
         <!-- Игровое поле -->
-        <section class="game__section field" id="field">
+        <section class="game__section field" id="single">
             <h2 class="visually-hidden">Игровое поле</h2>
             <span class="field__text">Вы играете за <span class="field__team">крестики</span></span>
             <span class="field__move">Ваш ход</span>
@@ -64,7 +64,7 @@
                     <span class="about__item-description"><a href="https://github.com/EgorLight/Cross-Zero-game">v. 1.0</a></span>
                 </li>
             </ul>
-            <a class="back-button about__back">Назад</a>
+            <a class="back-button" id="about-menu">Назад</a>
         </section>
 
         <!-- Раздел с настройками -->
@@ -89,7 +89,7 @@
                     </select>
                 </label> -->
             </form>
-            <a class="back-button settings__back">Назад</a>
+            <a class="back-button" id="settings-menu">Назад</a>
         </section>
 
         <!-- Раздел с правилами игры -->
@@ -98,7 +98,7 @@
             <p class="rules__text">
                 Игроки по очереди ставят на свободные клетки поля 3х3 знаки. Первый, выстроивший в ряд 3 своих фигуры по вертикали, горизонтали или диагонали, выигрывает.
             </p>
-            <a class="back-button rules__back">Назад</a>
+            <a class="back-button" id="rules-menu">Назад</a>
         </section>
     </main>
     <script src="game.js"></script>

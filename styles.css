@@ -67,7 +67,7 @@ body {
     animation: open .4s ease-in-out;
 }
 
-.menu__list, .mode__list, .about__list, .settings__list {
+.nav-list, .about__list, .settings__list {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -78,7 +78,7 @@ body {
     margin: 0;
 }
 
-.menu__link, .mode__link, .settings__value  {
+.nav-list__link, .settings__value  {
     display: block;
     width: 100%;
     padding: 20px 0;
@@ -89,7 +89,7 @@ body {
     transition: color .15s ease-in-out;
 }
 
-.menu__link:hover, .mode__link:hover, .field__give-up:hover, .settings__value:hover, .back-button:hover {
+.nav-list__link:hover, .field__give-up:hover, .settings__value:hover, .back-button:hover {
     cursor: pointer;
     color: #4a47a3;
 }
